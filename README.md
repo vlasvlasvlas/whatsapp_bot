@@ -8,7 +8,7 @@ Main objective:
 - simple test of a python based whatsapp bot
 
 arq:
-- based on python, flask, and ngrok, who communicates to Twilio
+- based on python (3.8), flask, and ngrok, who communicates to Twilio
 
 ## so:
 
