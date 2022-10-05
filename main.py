@@ -2,6 +2,23 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
+"""
+Main objective:
+- simple test of a python based whatsapp bot
+
+arq:
+- based on python, flask, and ngrok, who communicates to Twilio
+
+so:
+
+question:
+human -> whatsapp phone number (twilio) -> ngrok -> flask resource 
+
+answer:
+flask resource response -> ngrok -> twilio -> human 
+
+"""
+
 app = Flask(__name__)
 
 @app.route('/bot', methods=['POST'])
@@ -12,6 +29,8 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
+    
+    # this answers may be send to a api model that gave us feedback about question asked by human
     
     if 'quote' in incoming_msg:
         # return a quote
@@ -24,7 +43,8 @@ def bot():
         msg.body(quote)
         responded = True
         
-
+    # hardcoded answers for testing
+    
     if 'hola' in incoming_msg:
         obra = 'bienvenido al bot de Mapainversiones Argentina. Actualmente contamos con 5338 Obras y 1174 Proyectos de obra publicados.\n¿Qué desea hacer?\nEscriba: \n"obras" para conocer información de obras\nEscriba alguna provincia para conocer información de alguna provincia especifica (por ejemplo "Buenos Aires").\nTambién puede consultar por las obras de Infraestructura de cuidad escribiendo "cuidado".'
         msg.body(obra)
