@@ -14,7 +14,7 @@ arq:
 ## so:
 
 human question / input:
-- human -> whatsapp phone number (twilio) -> ngrok -> flask resource 
+- human -> whatsapp phone number (twilio) -> ngrok -> flask resource ( backend POST /bot )
 
-bot answer / response:
-- flask resource response -> ngrok -> twilio -> human 
+bot answer / feedback :
+- flask resource response ( backend POST /bot response ) -> ngrok -> twilio -> human 
