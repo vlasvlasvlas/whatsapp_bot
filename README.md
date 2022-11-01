@@ -13,8 +13,8 @@ arq:
 
 ## so:
 
-question:
+human question / input:
 - human -> whatsapp phone number (twilio) -> ngrok -> flask resource 
 
-answer:
+bot answer / response:
 - flask resource response -> ngrok -> twilio -> human 
